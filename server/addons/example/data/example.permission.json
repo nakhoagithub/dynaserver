@@ -1,0 +1,18 @@
+{
+    "document": "ExamplePermission",
+    "active": true,
+    "data": [
+        {
+            "id": "permission1",
+            "id_collection": "example.permission",
+            "name": "Permission example.permission",
+            "access": true
+        },
+        {
+            "id": "permission2",
+            "id_collection": "example.role",
+            "name": "Permission example.role",
+            "access": true
+        }
+    ]
+}

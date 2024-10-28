@@ -1,0 +1,26 @@
+{
+    "document": "Menu",
+    "active": true,
+    "data": [
+        {
+            "id": "setting",
+            "name": "Setting",
+            "url": "/web/setting"
+        },
+        {
+            "id": "account",
+            "name": "Account",
+            "url": "/web/account"
+        },
+        {
+            "id": "role",
+            "name": "Role",
+            "url": "/web/role"
+        },
+        {
+            "id": "permission",
+            "name": "Permission",
+            "url": "/web/permission"
+        }
+    ]
+}

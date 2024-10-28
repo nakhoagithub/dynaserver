@@ -1,0 +1,11 @@
+{
+    "name": "Dyna System",
+    "version": "v1.0.0",
+    "active": true,
+    "data": [
+        "permission.json",
+        "role.json",
+        "menu.json",
+        "setting.json"
+    ]
+}

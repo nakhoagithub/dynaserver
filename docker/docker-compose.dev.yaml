@@ -1,0 +1,23 @@
+services:
+  db:
+    image: mongo:noble
+    container_name: mongodb-dev
+    ports:
+      - 30005:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=123456
+    volumes:
+      - ./volumes/mongodb/db:/data/db
+
+  # crontab:
+  #   build:
+  #     context: ./crontab
+  #   restart: always
+  #   container_name: crontab-dev
+  #   environment:
+  #     - DATABASE_HOST=mongodb-dev
+  #     - DATABASE_USERNAME=admin
+  #     - DATABASE_PASSWORD=123456
+  #   volumes:
+  #     - ./volumes/mongodb/backup:/db

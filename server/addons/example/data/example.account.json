@@ -1,0 +1,19 @@
+{
+    "document": "ExampleAccount",
+    "active": true,
+    "data": [
+        {
+            "id": "account1",
+            "name": "Account Test",
+            "ids_role": [
+                "role1"
+            ],
+            "date": {
+                "$date": 1700000000
+            },
+            "object_id": {
+                "$oid": "123456789123456789abcdef"
+            }
+        }
+    ]
+}

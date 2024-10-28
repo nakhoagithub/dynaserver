@@ -1,0 +1,75 @@
+services:
+  web:
+    build: 
+      context: ../web
+    container_name: web
+
+  server:
+    build:
+      context: ../server
+    container_name: server
+    volumes:
+      - ./volumes/server/uploads/:/app/uploads/
+    environment:
+      - MODE=pro
+      - SERVER_HOST=0.0.0.0
+      - SERVER_PORT=8569
+
+      # Database
+      - DATABASE_USERNAME=admin
+      - DATABASE_PASSWORD=123456
+      - DATABASE_HOST=mongodb
+      - DATABASE_PORT=27017
+      - DATABASE_NAME=main
+      - MONGO_CONNECT_TIMEOUT_MS=5000
+      - MONGO_SELECTION_TIMEOUT_MS=5000
+      - FILE_EXPIRED_TIME=900 # second
+
+      # http
+      - CORS_ALLOW_ORIGINS=*
+
+      # secret
+      - JWT_SECRET_KEY=e759cc12a2b3bee2257e2a406421082a8d726957486f67bd59ef8bebb59378d1
+      - LOGIN_EXPIRATION_DATE=7
+
+      # Socket
+      - PRINT_CONSOLE_SOCKET_CONNECTION=true
+
+    ports:
+      - 8569:8569
+
+  mongodb:
+    image: mongo:noble
+    restart: always
+    container_name: mongodb
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=123456
+    volumes:
+      - ./volumes/mongodb/db:/data/db
+
+  crontab:
+    build:
+      context: ./crontab
+    restart: always
+    container_name: crontab
+    environment:
+      - DATABASE_HOST=mongodb
+      - DATABASE_USERNAME=admin
+      - DATABASE_PASSWORD=123456
+    volumes:
+      - ./volumes/mongodb/backup:/db
+
+  nginx:
+    image: nginx:latest
+    restart: always
+    container_name: nginx
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/proxy.conf:/etc/nginx/proxy.conf
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+      - mongodb
+      - server
+    ports:
+      - 3000:3000

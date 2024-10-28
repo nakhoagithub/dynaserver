@@ -1,0 +1,1 @@
+00 17 * * * sh /app/scripts/mongo-backup.sh >> /var/log/crontab.log

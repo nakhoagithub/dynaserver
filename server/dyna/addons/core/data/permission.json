@@ -1,0 +1,56 @@
+{
+    "document": "Permission",
+    "active": true,
+    "data": [
+        {
+            "id": "permission_account",
+            "name": "Quyền quản lý người dùng",
+            "id_collection": "Account",
+            "access_create": true,
+            "access_read": true,
+            "access_update": true,
+            "access_delete": true,
+            "access_socket": true
+        },
+        {
+            "id": "permission_menu",
+            "name": "Quyền quản lý Menu",
+            "id_collection": "Menu",
+            "access_create": false,
+            "access_read": true,
+            "access_update": false,
+            "access_delete": false,
+            "access_socket": true
+        },
+        {
+            "id": "permission_permission",
+            "name": "Quyền quản lý Quyền",
+            "id_collection": "Permission",
+            "access_create": false,
+            "access_read": true,
+            "access_update": false,
+            "access_delete": false,
+            "access_socket": true
+        },
+        {
+            "id": "permission_role",
+            "name": "Quyền quản lý Vai trò",
+            "id_collection": "Role",
+            "access_create": true,
+            "access_read": true,
+            "access_update": true,
+            "access_delete": true,
+            "access_socket": true
+        },
+        {
+            "id": "permission_setting",
+            "name": "Quyền quản lý cài đặt của hệ thống",
+            "id_collection": "Setting",
+            "access_create": true,
+            "access_read": true,
+            "access_update": true,
+            "access_delete": true,
+            "access_socket": true
+        }
+    ]
+}

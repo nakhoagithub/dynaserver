@@ -1,0 +1,42 @@
+{
+    "document": "Role",
+    "active": true,
+    "data": [
+        {
+            "id": "role_user_management",
+            "name": "Vai trò quản lý người dùng",
+            "description": "Vai trò quản lý thêm, sửa, xóa thông tin người dùng và quyền hạn",
+            "ids_permission": [
+                "permission_account",
+                "permission_menu",
+                "permission_permission",
+                "permission_role",
+                "permission_setting"
+            ],
+            "ids_menu": [
+                "account",
+                "role",
+                "permission"
+            ]
+        },
+        {
+            "id": "role_menu",
+            "name": "Vai trò xem danh sách menu",
+            "description": "Vai trò xem các menu",
+            "ids_permission": [
+                "permission_menu"
+            ]
+        },
+        {
+            "id": "role_setting",
+            "name": "Vai trò lý cài đặt hệ thống",
+            "description": "Vai trò quản lý và cài đặt các cấu hình cho hệ thống",
+            "ids_permission": [
+                "permission_setting"
+            ],
+            "ids_menu": [
+                "setting"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "document": "ExampleRole",
+    "active": true,
+    "no_update": false,
+    "data": [
+        {
+            "id": "role1",
+            "name": "Role 1",
+            "ids_permission": [
+                "permission1",
+                "permission2"
+            ],
+            "ids_permission_test": [
+                "permission1"
+            ]
+        }
+    ]
+}

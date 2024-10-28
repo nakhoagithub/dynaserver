@@ -1,0 +1,11 @@
+{
+    "document": "Setting",
+    "active": true,
+    "no_update": true,
+    "data": [
+        {
+            "id": "unique",
+            "ids_role_default_for_new_account": []
+        }
+    ]
+}

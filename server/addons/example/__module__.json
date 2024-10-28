@@ -1,0 +1,10 @@
+{
+    "name": "Example module",
+    "version": "v1.0.0",
+    "active": false,
+    "data": [
+        "example.account.json",
+        "example.permission.json",
+        "example.role.json"
+    ]
+}
