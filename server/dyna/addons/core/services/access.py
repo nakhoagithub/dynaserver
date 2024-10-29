@@ -13,7 +13,7 @@ class AccessService:
         self.account = account
 
     def access(self, id_collection: str | None = None):
-        is_master = self.account.type == "master"
+        is_master = self.account.id_type.id == "master"
 
         roles: List[Role] = [i for i in self.account.ids_role]
         permissions: List[Permission] = []

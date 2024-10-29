@@ -13,7 +13,7 @@ def _get_access(id_collection: str, account, type_access: TypeAccess):
         return False
 
     # check master
-    if account.type == "master":
+    if account.id_type.id == "master":
         return True
     
     # check role of user

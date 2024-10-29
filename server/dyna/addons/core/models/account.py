@@ -16,10 +16,6 @@ from dyna.http.exceptions import Forbidden
 
 AccountStatus = ("pending", "active", "banned", "closed")
 
-
-AccountType = ("master", "user", "service")
-
-
 class Account(Document):
 
     sid = StringField()
@@ -29,7 +25,7 @@ class Account(Document):
     password = StringField(required=True)
 
     status = StringField(choices=AccountStatus, default="active")
-    type = StringField(choices=AccountType, default="user")
+    id_type = ReferenceField("AccountType", required=True, reverse_delete_rule=mongoengine.DENY)
     active = BooleanField(required=True, default=True)
     last_login_at = DateTimeField()
     last_login_ip = StringField()
@@ -82,7 +78,7 @@ class Account(Document):
     
     def delete(self, id: str, **kwargs):
         account = self.env["Account"].get({"id": id}, first=True)
-        if account.type == "master":
+        if account.id_type.id == "master":
             raise AccountIsMasterCannotDeleteException()
         return super().delete(id, **kwargs)
 
@@ -165,3 +161,4 @@ class Account(Document):
             raise AccountOldPasswordInvalidException()
 
         return self.update({"id": id, "password": new_password})
+    

@@ -23,7 +23,7 @@ class Menu(Document):
 
     def __filter_with_access(self, values: dict):
         account = getattr(request, "account")
-        is_master = account.type == "master"
+        is_master = account.id_type.id == "master"
     
         filter_values = {**values}
         if not is_master:

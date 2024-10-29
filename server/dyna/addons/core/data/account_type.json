@@ -1,0 +1,15 @@
+{
+    "document": "AccountType",
+    "active": true,
+    "no_update": true,
+    "data": [
+        {
+            "id": "master",
+            "name": "Master"
+        },
+        {
+            "id": "user",
+            "name": "User"
+        }
+    ]
+}

@@ -69,7 +69,7 @@ class MenuService:
             **query_ids,
         }, sort={"seq": 1})
 
-        if account.type == "master":
+        if account.id_type.id == "master":
             ids_menu_access = [i.id for i in menu_obj.get({"active": True})]
 
         fields_remove = ["created_at", "modified_at", "active"]
